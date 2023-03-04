@@ -11,7 +11,7 @@ Testing
 ----------
 
 ```
-python3 -m signal_k_gen --num-boats 300 --nautical-miles 5
+python3 -m signal-k-gen --num-boats 300 --nautical-miles 5
 ```
 
 Installing
@@ -25,5 +25,5 @@ Usage
 ----------
 
 ```
-signal_k_gen --num-boats 300 --nautical-miles 5
+signal-k-gen --num-boats 300 --nautical-miles 5
 ```
