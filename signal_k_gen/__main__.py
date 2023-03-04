@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-
+"""
+gen signal k json for testing the navactor graph features
+"""
 import random
 import math
 import json
@@ -7,6 +9,9 @@ from datetime import datetime
 
 
 def generate_signal_k_data(num_boats, base_coords, nautical_miles):
+    """
+    gen signal k json
+    """
     signal_k_data = {
         "@context": "https://signalk.org/specification/1.4.0/context.json",
         "vessels": {
@@ -51,6 +56,9 @@ def generate_signal_k_data(num_boats, base_coords, nautical_miles):
 
 
 def move_boats(signal_k_data):
+    """
+    boats should move along a vector
+    """
     signal_k_data = json.loads(signal_k_data)
     for boat in signal_k_data["vessels"].values():
         # calculate new position based on current position, course over ground
@@ -75,13 +83,14 @@ def move_boats(signal_k_data):
 
 
 # example usage
-num_boats = 5
-base_coords = (37.7749, -122.4194)  # San Francisco
-nautical_miles = 10
-data = generate_signal_k_data(num_boats, base_coords, nautical_miles)
+TOTAL_BOATS = 5
+SEED_COORDS = (37.7749, -122.4194)  # San Francisco
+NAUTICAL_RANGE_IN_MILES = 10
+data = generate_signal_k_data(TOTAL_BOATS, SEED_COORDS,
+                              NAUTICAL_RANGE_IN_MILES)
 print("Initial boat positions:")
 print(data)
-for i in range(3):
+for clock_tick in range(3):
     data = move_boats(data)
-    print(f"Boat positions after iteration {i + 1}:")
+    print(f"Boat positions after iteration {clock_tick + 1}:")
     print(data)
