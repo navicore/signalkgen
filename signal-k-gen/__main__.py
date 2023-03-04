@@ -2,6 +2,7 @@
 """
 gen signal k json for testing the navactor graph features
 """
+import argparse
 import random
 import math
 import json
@@ -82,15 +83,34 @@ def move_boats(signal_k_data):
     return json.dumps(signal_k_data)
 
 
-# example usage
-TOTAL_BOATS = 5
-SEED_COORDS = (37.7749, -122.4194)  # San Francisco
-NAUTICAL_RANGE_IN_MILES = 10
-data = generate_signal_k_data(TOTAL_BOATS, SEED_COORDS,
-                              NAUTICAL_RANGE_IN_MILES)
-print("Initial boat positions:")
-print(data)
-for clock_tick in range(3):
-    data = move_boats(data)
-    print(f"Boat positions after iteration {clock_tick + 1}:")
+def main():
+    """
+    entry point
+    """
+    parser = argparse.ArgumentParser(description='Generate and move boats in Signal K format')
+    parser.add_argument('--num-boats', type=int, default=5, help='Number of boats to generate')
+    parser.add_argument('--latitude', type=float, default=37.7749,
+                        help='Base latitude for generating boats')
+    parser.add_argument('--longitude', type=float, default=-122.4194,
+                        help='Base longitude for generating boats')
+    parser.add_argument('--nautical-miles', type=float, default=10,
+                        help='Range in nautical miles for generating boats')
+    parser.add_argument('--iterations', type=int, default=3,
+                        help='Number of iterations to move boats')
+    args = parser.parse_args()
+
+    # Generate initial boat positions
+    data = generate_signal_k_data(args.num_boats, (args.latitude,
+                                                   args.longitude), args.nautical_miles)
+    print("Initial boat positions:")
     print(data)
+
+    # Move boats and print new positions
+    for i in range(args.iterations):
+        data = move_boats(data)
+        print(f"Boat positions after iteration {i + 1}:")
+        print(data)
+
+
+if __name__ == "__main__":
+    main()
