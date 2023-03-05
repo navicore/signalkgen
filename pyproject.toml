@@ -8,7 +8,7 @@ authors = [
     {name = "Ed Sweeney", email = "ed@onextent.com"},
 ]
 description = "JSON generator for Signal K Marine data"
-version = "0.1.5"
+version = "0.1.6"
 readme = "README.md"
 requires-python = ">=3.11"
 keywords = ["json", "generator", "signal-k"]

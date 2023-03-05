@@ -28,6 +28,8 @@ source ./venv/bin/activate
 python -m pip install --upgrade pip
 ```
 
+via [Pypi](https://pypi.org/project/signalkgen/)
+
 ```
 python -m pip install signalkgen
 ```
