@@ -45,4 +45,4 @@ Usage
 signalkgen --num-boats 300 --nautical-miles 5
 ```
 
-![Fun Mutation of Dot Output](docs/boats2.png)
+![Fun Mutation of Dot Output](docs/boats1.png)
