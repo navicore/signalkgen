@@ -1,24 +1,33 @@
-gen test data for navactor
+Generate Test Data for Navactor
 ==============
 
-Data will eventually be signal k format and generate a graph of marine
-reporters reporting their own info as well as their neighbors.
+Data will eventually be signal k format and generate a time-series graph of
+marine reporters reporting their own info as well as their neighbors'.
 
 
 see: https://signalk.org/specification/1.7.0/doc/data_model.html
 
-Testing
-----------
-
-```
-python3 -m signalkgen --num-boats 300 --nautical-miles 5
-```
+also, long live PEP 621
 
 Installing
 -----------
 
+virtualenv
+
 ```
-pip install .
+python -m venv venv
+source ./venv/bin/activate
+python -m pip install --upgrade pip
+```
+
+```
+python -m pip install signalkgen
+```
+
+Or install with "editing" mode from cloned repo for development of the code.
+
+```
+python -m pip install -e .
 ```
 
 Usage

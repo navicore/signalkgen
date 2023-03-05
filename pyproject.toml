@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "signalkgen"
+authors = [
+    {name = "Ed Sweeney", email = "ed@onextent.com"},
+]
+description = "JSON generator for Signal K Marine data"
+version = "0.1.4"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["json", "generator", "signal-k"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+]
+[project.scripts]
+signalkgen = "signalkgen.__main__:main"
