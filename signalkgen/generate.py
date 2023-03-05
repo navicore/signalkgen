@@ -4,7 +4,6 @@ gen signal k json for testing the navactor graph features
 """
 import random
 import math
-import json
 
 
 def generate(num_boats, base_coords, nautical_miles):
@@ -51,4 +50,4 @@ def generate(num_boats, base_coords, nautical_miles):
             "courseOverGroundTrue": 0.0
         }
         signal_k_data["vessels"][f"boat-{i}"] = boat_data
-    return json.dumps(signal_k_data)
+    return signal_k_data

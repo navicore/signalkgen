@@ -1,8 +1,12 @@
 Generate Test Data for Navactor
 ==============
 
+NOTE: UNDER CONSTRUCTION - NOT VALID SIGNAL K DATA YET
+==============
+
 Data will eventually be signal k format and generate a time-series graph of
-marine reporters reporting their own info as well as their neighbors'.
+marine reporters reporting their own info as well as that of their nearest
+neighbors'.
 
 
 see: https://signalk.org/specification/1.7.0/doc/data_model.html

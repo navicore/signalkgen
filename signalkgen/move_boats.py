@@ -4,7 +4,6 @@ gen signal k json for testing the navactor graph features
 """
 import random
 import math
-import json
 from datetime import datetime
 
 
@@ -12,7 +11,6 @@ def move_boats(signal_k_data):
     """
     boats should move along a vector
     """
-    signal_k_data = json.loads(signal_k_data)
     for boat in signal_k_data["vessels"].values():
         # calculate new position based on current position, course over ground
         # true, and speed over ground
@@ -32,4 +30,4 @@ def move_boats(signal_k_data):
         boat["courseOverGroundTrue"] = boat["heading"]["trueHeading"]
     signal_k_data["@timestamp"] = datetime.utcnow().strftime(
             '%Y-%m-%dT%H:%M:%S.%fZ')
-    return json.dumps(signal_k_data)
+    return signal_k_data
