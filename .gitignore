@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 
+venv/
+
 # Distribution / packaging
 dist/
 build/
