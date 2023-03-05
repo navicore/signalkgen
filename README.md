@@ -13,6 +13,10 @@ see: https://signalk.org/specification/1.7.0/doc/data_model.html
 
 also, long live PEP 621
 
+
+![Fun Mutation of Dot Output](docs/boats3.png)
+
+
 Installing
 -----------
 
@@ -40,3 +44,5 @@ Usage
 ```
 signalkgen --num-boats 300 --nautical-miles 5
 ```
+
+![Fun Mutation of Dot Output](docs/boats2.png)
