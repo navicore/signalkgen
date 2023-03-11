@@ -7,6 +7,14 @@ import math
 import uuid
 from datetime import datetime
 
+country_codes = {
+    "200": range(0, 20),  # Test MID range for illustration purposes
+    "201": range(0, 20),  # Test MID range for illustration purposes
+    "202": range(0, 20),  # Test MID range for illustration purposes
+    "203": range(0, 20),  # Test MID range for illustration purposes
+    "204": range(0, 20),  # Test MID range for illustration purposes
+    "205": range(0, 20)   # Test MID range for illustration purposes
+}
 
 def generate(num_boats, base_coords, nautical_miles):
     """
@@ -14,10 +22,17 @@ def generate(num_boats, base_coords, nautical_miles):
     """
     vessels = {}
     for i in range(1, num_boats + 1):
+        # Generate MMSI based on country code, MID, and unique vessel ID
+        country_code = random.choice(list(country_codes.keys()))
+        mid_range = country_codes[country_code]
+        mid = random.choice(mid_range)
+        vessel_id = random.randint(1000, 9999)
+        mmsi = f"{country_code}{mid}{vessel_id}"
+
         boat_data = {
             "name": f"Boat {i}",
             "uuid": f"urn:mrn:signalk:uuid:{str(uuid.uuid4())}",
-            "mmsi": str(123456789 + i),
+            "mmsi": mmsi,
             "navigation": {
                 "position": {
                     "value": {
