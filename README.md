@@ -47,4 +47,14 @@ Usage
 signalkgen --num-boats 300 --nautical-miles 5
 ```
 
+Validation
+-------------
+
+```
+git clone https://github.com/SignalK/specification
+cd specification
+npm install
+signalkgen --num-boats 300 --nautical-miles 5 | ./bin/validate.js
+```
+
 ![Fun Mutation of Dot Output](docs/boats1.png)
