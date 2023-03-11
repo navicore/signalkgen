@@ -29,7 +29,8 @@ def move_boats(signal_k_data):
         boat["navigation"]["position"]["value"]["longitude"] = lon
         boat["navigation"]["headingMagnetic"]["value"] = random.uniform(0, 360)
         boat["navigation"]["speedOverGround"]["value"] = random.randint(1, 15)
-        boat["navigation"]["courseOverGroundTrue"]["value"] = boat["navigation"]["headingMagnetic"]["value"]
+        boat["navigation"]["courseOverGroundTrue"]["value"] = \
+            boat["navigation"]["headingMagnetic"]["value"]
         boat["navigation"]["position"]["timestamp"] = datetime.utcnow().strftime(
                     '%Y-%m-%dT%H:%M:%S.%fZ')
         boat["navigation"]["headingMagnetic"]["timestamp"] = datetime.utcnow().strftime(
