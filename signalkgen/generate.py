@@ -26,8 +26,9 @@ def generate(num_boats, base_coords, nautical_miles):
         country_code = random.choice(list(country_codes.keys()))
         mid_range = country_codes[country_code]
         mid = random.choice(mid_range)
+        mid_padded = str(mid).zfill(2)
         vessel_id = random.randint(1000, 9999)
-        mmsi = f"{country_code}{mid}{vessel_id}"
+        mmsi = f"{country_code}{mid_padded}{vessel_id}"
 
         boat_data = {
             "name": f"Boat {i}",
@@ -46,26 +47,26 @@ def generate(num_boats, base_coords, nautical_miles):
                     "$source": "self",
                     "timestamp": datetime
                     .utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+                },
+                "courseOverGroundTrue": {
+                    "value": 0.0,
+                    "$source": "self",
+                    "timestamp": datetime.utcnow().strftime(
+                        '%Y-%m-%dT%H:%M:%S.%fZ')
+                },
+                "speedOverGround": {
+                    "value": 0.0,
+                    "$source": "self",
+                    "timestamp": datetime.utcnow().strftime(
+                        '%Y-%m-%dT%H:%M:%S.%fZ')
+                },
+                "headingMagnetic": {
+                    "value": 0.0,
+                    "$source": "self",
+                    "timestamp": datetime.utcnow().strftime(
+                        '%Y-%m-%dT%H:%M:%S.%fZ')
                 }
-            },
-            "headingMagnetic": {
-                "value": 0.0,
-                "$source": "self",
-                "timestamp": datetime.utcnow().strftime(
-                    '%Y-%m-%dT%H:%M:%S.%fZ')
-            },
-            "speedOverGround": {
-                "value": 0.0,
-                "$source": "self",
-                "timestamp": datetime.utcnow().strftime(
-                    '%Y-%m-%dT%H:%M:%S.%fZ')
-            },
-            "courseOverGroundTrue": {
-                "value": 0.0,
-                "$source": "self",
-                "timestamp": datetime.utcnow().strftime(
-                    '%Y-%m-%dT%H:%M:%S.%fZ')
             }
         }
-        vessels[f"urn:mrn:signalk:uuid:{boat_data['uuid']}"] = boat_data
+        vessels[f"{boat_data['uuid']}"] = boat_data
     return {"vessels": vessels}
