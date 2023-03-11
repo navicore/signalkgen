@@ -4,50 +4,68 @@ gen signal k json for testing the navactor graph features
 """
 import random
 import math
+import uuid
+from datetime import datetime
 
+country_codes = {
+    "200": range(0, 20),  # Test MID range for illustration purposes
+    "201": range(0, 20),  # Test MID range for illustration purposes
+    "202": range(0, 20),  # Test MID range for illustration purposes
+    "203": range(0, 20),  # Test MID range for illustration purposes
+    "204": range(0, 20),  # Test MID range for illustration purposes
+    "205": range(0, 20)   # Test MID range for illustration purposes
+}
 
 def generate(num_boats, base_coords, nautical_miles):
     """
     gen signal k json
     """
-    signal_k_data = {
-        "@context": "https://signalk.org/specification/1.4.0/context.json",
-        "vessels": {
-            "boat-1": {
-                "name": "Boat 1",
-                "mmsi": "123456789",
-                "navigation": {
-                    "position": {
-                        "latitude": base_coords[0],
-                        "longitude": base_coords[1]
-                    }
-                },
-                "heading": {
-                    "trueHeading": 0.0
-                },
-                "speedOverGround": 0.0,
-                "courseOverGroundTrue": 0.0
-            }
-        }
-    }
-    for i in range(2, num_boats + 1):
+    vessels = {}
+    for i in range(1, num_boats + 1):
+        # Generate MMSI based on country code, MID, and unique vessel ID
+        country_code = random.choice(list(country_codes.keys()))
+        mid_range = country_codes[country_code]
+        mid = random.choice(mid_range)
+        vessel_id = random.randint(1000, 9999)
+        mmsi = f"{country_code}{mid}{vessel_id}"
+
         boat_data = {
             "name": f"Boat {i}",
-            "mmsi": str(123456789 + i),
+            "uuid": f"urn:mrn:signalk:uuid:{str(uuid.uuid4())}",
+            "mmsi": mmsi,
             "navigation": {
                 "position": {
-                    "latitude": base_coords[0] + (random.random() * 2 - 1) *
-                    (nautical_miles / 60),
-                    "longitude": base_coords[1] + (random.random() * 2 - 1) *
-                    (nautical_miles / 60) / math.cos(base_coords[0] *
-                                                     math.pi / 180)
+                    "value": {
+                        "latitude": base_coords[0] + (random.random() * 2 - 1) *
+                        (nautical_miles / 60),
+                        "longitude": base_coords[1] + (random.random() * 2 - 1) *
+                        (nautical_miles / 60) / math.cos(base_coords[0] *
+                                                         math.pi / 180),
+                        "altitude": 0.0
+                    },
+                    "$source": "self",
+                    "timestamp": datetime
+                    .utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
                 }
             },
-            "heading": {
-                "trueHeading": 0.0
+            "headingMagnetic": {
+                "value": 0.0,
+                "$source": "self",
+                "timestamp": datetime.utcnow().strftime(
+                    '%Y-%m-%dT%H:%M:%S.%fZ')
             },
-            "speedOverGround": 0.0,
-            "courseOverGroundTrue": 0.0
+            "speedOverGround": {
+                "value": 0.0,
+                "$source": "self",
+                "timestamp": datetime.utcnow().strftime(
+                    '%Y-%m-%dT%H:%M:%S.%fZ')
+            },
+            "courseOverGroundTrue": {
+                "value": 0.0,
+                "$source": "self",
+                "timestamp": datetime.utcnow().strftime(
+                    '%Y-%m-%dT%H:%M:%S.%fZ')
+            }
         }
-        signal_k_data["vessels"][f"boat-{i}"] = boat_data
-    return signal_k_data
+        vessels[f"urn:mrn:signalk:uuid:{boat_data['uuid']}"] = boat_data
+    return {"vessels": vessels}

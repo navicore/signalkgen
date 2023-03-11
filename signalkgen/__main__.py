@@ -4,6 +4,7 @@ gen signal k json for testing the navactor graph features
 """
 import argparse
 import json
+import uuid
 from signalkgen.move_boats import move_boats
 from signalkgen.generate import generate
 
@@ -23,16 +24,37 @@ def main():
                         help='Number of iterations to move boats')
     args = parser.parse_args()
 
-
     # Generate initial boat positions
     data = generate(args.num_boats, (args.latitude,
                     args.longitude), args.nautical_miles)
-    boat_data = [data]
+    signal_k_data = {
+        "version": "1.0.0",
+        "self": f"urn:mrn:signalk:uuid:{str(uuid.uuid4())}",
+        "vessels": data["vessels"],
+        "sources": {
+            "self": {
+                "type": "internal",
+                "src": "signalkgen"
+            }
+        }
+    }
+    boat_data = [signal_k_data]
 
     # Move boats and print new positions
     for _ in range(args.iterations):
         data = move_boats(data)
-        boat_data.append(data)
+        signal_k_data = {
+            "version": "1.0.0",
+            "self": f"urn:mrn:signalk:uuid:{str(uuid.uuid4())}",
+            "vessels": data["vessels"],
+            "sources": {
+                "self": {
+                    "type": "internal",
+                    "src": "signalkgen"
+                }
+            }
+        }
+        boat_data.append(signal_k_data)
 
     # Convert list of dictionaries to JSON string
     print(json.dumps(boat_data, indent=2))
