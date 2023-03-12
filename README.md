@@ -12,6 +12,13 @@ Test output is validated against the Signal K scheme with the [Signal K project'
 
 also, long live PEP 621
 
+Status
+----------
+
+* Generates arrays of boats moving in different directions at different speeds.
+
+* Currently boats reporting other boats is random and the nearest neighbor
+feature is not implemented yet.
 
 ![Fun Mutation of Dot Output](docs/boats3.png)
 
