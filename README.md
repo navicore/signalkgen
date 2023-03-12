@@ -15,7 +15,6 @@ also, long live PEP 621
 Status
 ----------
 
-* Only location, speed, and direction oriented telemetry implemented so far.
 * Implements the [full format](https://signalk.org/specification/1.7.0/doc/data_model.html#full-format) spec.
 * NOT YET implemented: [delta format](https://signalk.org/specification/1.7.0/doc/data_model.html#delta-format) spec.
 * Generates arrays of boats moving in different directions at different speeds.
