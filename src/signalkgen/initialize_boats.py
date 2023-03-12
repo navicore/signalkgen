@@ -4,7 +4,7 @@ gen signal k json for testing the navactor graph features
 import random
 import math
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
 
 country_codes = {
     "200": range(0, 20),  # Test MID range for illustration purposes
@@ -15,12 +15,16 @@ country_codes = {
     "205": range(0, 20)   # Test MID range for illustration purposes
 }
 
-def initialize_boats(num_boats, base_coords, nautical_miles):
+def initialize_boats(args, base_coords):
     """
     gen signal k json
     """
+    now = datetime.utcnow()
+    init_timestamp = now - timedelta(hours=args.hours_ago)
+    init_timestamp_str = init_timestamp.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+
     vessels = {}
-    for i in range(1, num_boats + 1):
+    for i in range(1, args.num_boats + 1):
         # Generate MMSI based on country code, MID, and unique vessel ID
         country_code = random.choice(list(country_codes.keys()))
         mid_range = country_codes[country_code]
@@ -37,33 +41,29 @@ def initialize_boats(num_boats, base_coords, nautical_miles):
                 "position": {
                     "value": {
                         "latitude": base_coords[0] + (random.random() * 2 - 1) *
-                        (nautical_miles / 60),
+                        (args.nautical_miles / 60),
                         "longitude": base_coords[1] + (random.random() * 2 - 1) *
-                        (nautical_miles / 60) / math.cos(base_coords[0] *
+                        (args.nautical_miles / 60) / math.cos(base_coords[0] *
                                                          math.pi / 180),
                         "altitude": 0.0
                     },
                     "$source": "self",
-                    "timestamp": datetime
-                    .utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+                    "timestamp": init_timestamp_str
                 },
                 "courseOverGroundTrue": {
                     "value": 0.0,
                     "$source": "self",
-                    "timestamp": datetime.utcnow().strftime(
-                        '%Y-%m-%dT%H:%M:%S.%fZ')
+                    "timestamp": init_timestamp_str
                 },
                 "speedOverGround": {
                     "value": 0.0,
                     "$source": "self",
-                    "timestamp": datetime.utcnow().strftime(
-                        '%Y-%m-%dT%H:%M:%S.%fZ')
+                    "timestamp": init_timestamp_str
                 },
                 "headingMagnetic": {
                     "value": 0.0,
                     "$source": "self",
-                    "timestamp": datetime.utcnow().strftime(
-                        '%Y-%m-%dT%H:%M:%S.%fZ')
+                    "timestamp": init_timestamp_str
                 }
             }
         }
