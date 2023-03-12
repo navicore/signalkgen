@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 gen signal k json for testing the navactor graph features
 """
@@ -16,7 +15,7 @@ country_codes = {
     "205": range(0, 20)   # Test MID range for illustration purposes
 }
 
-def generate(num_boats, base_coords, nautical_miles):
+def initialize_boats(num_boats, base_coords, nautical_miles):
     """
     gen signal k json
     """

@@ -1,13 +1,12 @@
-#!/usr/bin/env python3
 """
-gen signal k json for testing the navactor graph features
+gen full data model (fdm) signal k json based on input fdm and move boats
 """
 import random
 import math
 from datetime import datetime
 
 
-def move_boats(signal_k_data):
+def move_boats_fdm(signal_k_data):
     """
     boats should move along a vector
     """
