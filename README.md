@@ -15,8 +15,9 @@ also, long live PEP 621
 Status
 ----------
 
+* Implements the Signal K [full format](https://signalk.org/specification/1.7.0/doc/data_model.html#full-format) spec.
+* TODO: the Signal K [delta format](https://signalk.org/specification/1.7.0/doc/data_model.html#delta-format) spec.
 * Generates arrays of boats moving in different directions at different speeds.
-
 * Currently boats reporting other boats is random and the nearest neighbor
 feature is not implemented yet.
 
