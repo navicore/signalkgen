@@ -24,7 +24,7 @@ def main():
                         help='Number of iterations to move boats')
     args = parser.parse_args()
 
-    # TODO this is wrong - each boat in the generate dict should report just
+    # this is wrong - each boat in the generate dict should report just
     # the closest other boats in it's vessels stanza
 
     # Generate initial boat positions
