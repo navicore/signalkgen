@@ -3,6 +3,7 @@
 gen signal k json for testing the navactor graph features
 """
 import argparse
+import copy
 import random
 import json
 from signalkgen.move_boats import move_boats
@@ -48,7 +49,7 @@ def main():
 
     # Move boats and print new positions
     for _ in range(args.iterations):
-        data = move_boats(data)
+        data = copy.deepcopy(move_boats(data))
         signal_k_data = {
             "version": "1.0.0",
             "self": f"{reporting_boat_uuid}",
