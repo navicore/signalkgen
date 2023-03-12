@@ -1,15 +1,14 @@
 Generate Test Data for Navactor
 ==============
 
-NOTE: UNDER CONSTRUCTION - NOT VALID SIGNAL K DATA YET
-==============
-
-Data will eventually be signal k format and generate a time-series graph of
+A test data generator for [Signal K](https://signalk.org/specification/1.7.0/doc/data_model.html) json forming time-series graphs of
 marine reporters reporting their own info as well as that of their nearest
 neighbors'.
 
 
 see: https://signalk.org/specification/1.7.0/doc/data_model.html
+
+Test output is validated against the Signal K scheme with the [Signal K project's validation tool](https://github.com/SignalK/specification).
 
 also, long live PEP 621
 
@@ -49,6 +48,8 @@ signalkgen --num-boats 300 --nautical-miles 5
 
 Validation
 -------------
+
+See `tox.ini` or `.github/workflows/check.yml` for automated tests that invoke the Signal K validation tools.
 
 ```
 git clone https://github.com/SignalK/specification
