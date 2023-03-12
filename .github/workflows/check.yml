@@ -27,6 +27,6 @@ jobs:
       - name: Setup test suite
         run: tox r -vv --notest
       - name: Run test suite
-        run: tox
+        run: tox -e test,validate
         env:
           PYTEST_ADDOPTS: "-vv --durations=10"
