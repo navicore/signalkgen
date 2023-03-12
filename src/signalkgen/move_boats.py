@@ -12,7 +12,8 @@ def move_boats(signal_k_data):
     boats should move along a vector
     """
     vessels = signal_k_data["vessels"]
-    for vessel_id in vessels:
+    vessel_ids = vessels.keys()
+    for vessel_id in vessel_ids:
         boat = vessels[vessel_id]
         # calculate new position based on current position, course over ground
         # true, and speed over ground
