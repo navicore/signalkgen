@@ -3,7 +3,8 @@
 gen signal k json for testing the navactor graph features
 """
 import argparse
-from signalkgen.gen_full_spec import gen_full_spec
+from signalkgen.gen_fdm import gen_fdm
+from signalkgen.gen_ddm import gen_ddm
 
 def main():
     """
@@ -19,9 +20,13 @@ def main():
                         help='Range in nautical miles for generating boats')
     parser.add_argument('--iterations', type=int, default=3,
                         help='Number of iterations to move boats')
+    parser.add_argument('--delta-data-model', action='store_true', help='Generate delta data model')
     args = parser.parse_args()
 
-    gen_full_spec(args)
+    if args.delta_data_model:
+        gen_ddm(args)
+    else:
+        gen_fdm(args)
 
 if __name__ == "__main__":
     main()

@@ -1,14 +1,13 @@
-#!/usr/bin/env python3
 """
 gen signal k json for testing the navactor graph features
 """
 import copy
 import random
 import json
-from signalkgen.move_boats import move_boats
-from signalkgen.generate import generate
+from signalkgen.move_boats_fdm import move_boats_fdm
+from signalkgen.initialize_boats import initialize_boats
 
-def gen_full_spec(args):
+def gen_fdm(args):
     """
     gen json for full spec schema
     """
@@ -16,7 +15,7 @@ def gen_full_spec(args):
     # the closest other boats in it's vessels stanza
 
     # Generate initial boat positions
-    data = generate(args.num_boats, (args.latitude,
+    data = initialize_boats(args.num_boats, (args.latitude,
                     args.longitude), args.nautical_miles)
 
     reporting_boat_uuid = random.choice(list(data.keys()))
@@ -36,7 +35,7 @@ def gen_full_spec(args):
 
     # Move boats and print new positions
     for _ in range(args.iterations):
-        data = copy.deepcopy(move_boats(data))
+        data = copy.deepcopy(move_boats_fdm(data))
         signal_k_data = {
             "version": "1.0.0",
             "self": f"{reporting_boat_uuid}",
