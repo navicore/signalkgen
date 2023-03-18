@@ -27,15 +27,7 @@ feature is not implemented yet.
 Installing
 -----------
 
-virtualenv
-
-```
-python -m venv venv
-source ./venv/bin/activate
-python -m pip install --upgrade pip
-```
-
-via [Pypi](https://pypi.org/project/signalkgen/)
+via [Pypi](https://pypi.org/project/signalkgen)
 
 ```
 python -m pip install signalkgen
@@ -44,6 +36,9 @@ python -m pip install signalkgen
 Or install with "editing" mode from cloned repo for development of the code.
 
 ```
+python -m venv venv
+source ./venv/bin/activate
+python -m pip install --upgrade pip
 python -m pip install -e .
 ```
 
