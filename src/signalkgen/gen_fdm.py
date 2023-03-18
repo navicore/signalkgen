@@ -51,4 +51,7 @@ def gen_fdm(args):
             }
             boat_data.append(signal_k_data)
 
-    print(json.dumps(boat_data, indent=2))
+    if args.compact_json:
+        print(json.dumps(boat_data, separators=(',', ':')))
+    else:
+        print(json.dumps(boat_data, indent=2))

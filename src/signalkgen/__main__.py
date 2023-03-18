@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--hours-ago', type=int, default=12,
                         help='Initial timestamp for each generated observations is HOURS_AGO hours')
     parser.add_argument('--delta-data-model', action='store_true', help='Generate delta data model')
+    parser.add_argument('--compact-json', action='store_true', help='Generate Compact JSON')
     args = parser.parse_args()
 
     if args.delta_data_model:
