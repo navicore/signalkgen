@@ -21,9 +21,6 @@ Status
 * Currently boats reporting other boats is random and the nearest neighbor
 feature is not implemented yet.
 
-![Fun Mutation of Dot Output](docs/boats3.png)
-
-
 Installing
 -----------
 
@@ -61,5 +58,3 @@ cd specification
 npm install
 signalkgen --num-boats 300 --nautical-miles 5 | ./bin/validate.js
 ```
-
-![Fun Mutation of Dot Output](docs/boats1.png)
