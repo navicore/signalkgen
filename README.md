@@ -58,3 +58,10 @@ cd specification
 npm install
 signalkgen --num-boats 300 --nautical-miles 5 | ./bin/validate.js
 ```
+
+Example Commands
+
+```
+signalkgen --num-boats 30 --nautical-miles 5 --iterations 2 | jq '.. | .timestamp? // empty'  
+```
+
