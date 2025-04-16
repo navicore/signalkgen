@@ -8,9 +8,9 @@ authors = [
     {name = "Ed Sweeney", email = "ed@onextent.com"},
 ]
 description = "JSON generator for Signal K Marine data"
-version = "0.2.3"
+version = "0.2.4"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 keywords = ["json", "generator", "signal-k"]
 license = {text = "MIT"}
 classifiers = [
