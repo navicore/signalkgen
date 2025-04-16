@@ -7,22 +7,30 @@ import sys
 import argparse
 
 def flatten_json(nested_json, parent_key='', sep='_'):
-    """Recursively flattens a nested JSON object."""
-    items = []
+    """Recursively flattens a nested JSON object, including simple fields."""
+    items = {}
     for k, v in nested_json.items():
         new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        # Adjust key truncation logic
         if ':' in new_key:
-            new_key = new_key.split(':')[0]  # Remove any colons from the key
+            new_key = new_key.split(':', 1)[1] if '_' not in new_key else new_key.rsplit('_', 1)[-1]
         if '$' in new_key:
             new_key = new_key.replace('$', '')
         if isinstance(v, dict):
-            items.extend(flatten_json(v, new_key, sep=sep).items())
+            # Recursively flatten nested dictionaries
+            nested_items = flatten_json(v, new_key, sep=sep)
+            items.update(nested_items)
         elif isinstance(v, list):
+            # Flatten lists by enumerating their items
             for i, item in enumerate(v):
-                items.extend(flatten_json({f"{new_key}_{i}": item}, '', sep=sep).items())
+                list_items = flatten_json({f"{new_key}_{i}": item}, '', sep=sep)
+                items.update(list_items)
         else:
-            items.append((new_key, v))
-    return dict(items)
+            # Add simple fields directly
+            if new_key in items:
+                print(f"Warning: Key collision detected for {new_key}. Overwriting value.")
+            items[new_key] = v
+    return items
 
 def infer_column_types(data):
     """Infers PostgreSQL column types based on the data."""
@@ -52,7 +60,7 @@ def load_to_postgres(data, table_name, connection_string, dry_run=False):
     # Create table SQL
     columns = ', '.join([f"{col} {column_types.get(col, 'TEXT')}" for col in df.columns])
     create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns});"
-    
+ 
     # Insert data SQL
     insert_query_template = f"INSERT INTO {table_name} ({', '.join(df.columns)}) VALUES "
     values = df.values.tolist()
@@ -93,7 +101,14 @@ def main():
     data = json.load(sys.stdin)
 
     # Flatten the JSON data
-    flattened_data = [flatten_json(item) for item in data]
+    #flattened_data = [flatten_json(item) for item in data]
+    flattened_data = []
+    for item in data:
+        vessels = item.get("vessels", {})
+        for vessel_id, vessel_data in vessels.items():
+            # Add the vessel ID as a prefix to ensure uniqueness
+            flattened_vessel = flatten_json(vessel_data, parent_key=vessel_id)
+            flattened_data.append(flattened_vessel)
 
     # Get PostgreSQL connection string from environment variable
     connection_string = os.getenv("DATABASE_URL")
