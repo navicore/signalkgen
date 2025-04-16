@@ -14,7 +14,7 @@ def _move_boat(boat):
     prev_timestamp = datetime.strptime(prev_timestamp_str, '%Y-%m-%dT%H:%M:%S.%fZ')
     new_timestamp = prev_timestamp + timedelta(minutes=interval_dur)
 
-    random_minutes = random.randint(1, interval_dur / 2)
+    random_minutes = random.randint(1, interval_dur // 2)
     random_seconds = random.randint(1, 60)
     new_random_timestamp = new_timestamp + timedelta(minutes=random_minutes, seconds=random_seconds)
 
