@@ -53,18 +53,18 @@ def load_to_postgres(data, table_name, connection_string, dry_run=False):
     """Loads data into a PostgreSQL table or prints SQL in dry-run mode."""
     # Convert data to a DataFrame
     df = pd.DataFrame(data)
-    
+
     # Infer column types
     column_types = infer_column_types(data)
-    
+
     # Create table SQL
     columns = ', '.join([f"{col} {column_types.get(col, 'TEXT')}" for col in df.columns])
     create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns});"
- 
+
     # Insert data SQL
     insert_query_template = f"INSERT INTO {table_name} ({', '.join(df.columns)}) VALUES "
     values = df.values.tolist()
-    
+
     if dry_run:
         # Print SQL statements
         print("-- Dry Run: SQL Statements")
@@ -77,14 +77,14 @@ def load_to_postgres(data, table_name, connection_string, dry_run=False):
         # Connect to PostgreSQL
         conn = psycopg2.connect(connection_string)
         cursor = conn.cursor()
-        
+
         # Execute create table
         cursor.execute(create_table_query)
-        
+
         # Execute insert data
         insert_query = f"{insert_query_template} %s"
         execute_values(cursor, insert_query, values)
-        
+
         # Commit and close
         conn.commit()
         cursor.close()
