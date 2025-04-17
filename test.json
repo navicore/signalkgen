@@ -1,0 +1,632 @@
+[
+  {
+    "version": "1.0.0",
+    "self": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+    "vessels": {
+      "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a": {
+        "name": "Boat 1",
+        "uuid": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+        "mmsi": "200098438",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.78039400669318,
+              "longitude": -122.38526611923439,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 24.786300968644476,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          },
+          "speedOverGround": {
+            "value": 6,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 24.786300968644476,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954": {
+        "name": "Boat 2",
+        "uuid": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+        "mmsi": "204182846",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.792346651873494,
+              "longitude": -122.39292789284376,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 47.79157834885763,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          },
+          "speedOverGround": {
+            "value": 12,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 47.79157834885763,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:18:45.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e": {
+        "name": "Boat 3",
+        "uuid": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+        "mmsi": "204107008",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.804056732094395,
+              "longitude": -122.41456270566036,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:21:45.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 287.9211163974087,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:21:45.592502Z"
+          },
+          "speedOverGround": {
+            "value": 15,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:21:45.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 287.9211163974087,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:21:45.592502Z"
+          }
+        }
+      }
+    },
+    "sources": {
+      "self": {
+        "type": "internal",
+        "src": "signalkgen"
+      }
+    }
+  },
+  {
+    "version": "1.0.0",
+    "self": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+    "vessels": {
+      "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a": {
+        "name": "Boat 1",
+        "uuid": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+        "mmsi": "200098438",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.87118178076582,
+              "longitude": -122.3321575850073,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 342.9916775629977,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          },
+          "speedOverGround": {
+            "value": 9,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 342.9916775629977,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954": {
+        "name": "Boat 2",
+        "uuid": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+        "mmsi": "204182846",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.92671254579963,
+              "longitude": -122.2051215786406,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 316.09380577901817,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          },
+          "speedOverGround": {
+            "value": 3,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 316.09380577901817,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e": {
+        "name": "Boat 3",
+        "uuid": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+        "mmsi": "204107008",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.880983559010474,
+              "longitude": -122.71593595484421,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 284.7820348002027,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 284.7820348002027,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          }
+        }
+      }
+    },
+    "sources": {
+      "self": {
+        "type": "internal",
+        "src": "signalkgen"
+      }
+    }
+  },
+  {
+    "version": "1.0.0",
+    "self": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+    "vessels": {
+      "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a": {
+        "name": "Boat 1",
+        "uuid": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+        "mmsi": "200098438",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.87118178076582,
+              "longitude": -122.3321575850073,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 342.9916775629977,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          },
+          "speedOverGround": {
+            "value": 9,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 342.9916775629977,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:30:30.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954": {
+        "name": "Boat 2",
+        "uuid": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+        "mmsi": "204182846",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.92671254579963,
+              "longitude": -122.2051215786406,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 316.09380577901817,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          },
+          "speedOverGround": {
+            "value": 3,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 316.09380577901817,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:31:54.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e": {
+        "name": "Boat 3",
+        "uuid": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+        "mmsi": "204107008",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.880983559010474,
+              "longitude": -122.71593595484421,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 284.7820348002027,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 284.7820348002027,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:37:17.592502Z"
+          }
+        }
+      }
+    },
+    "sources": {
+      "self": {
+        "type": "internal",
+        "src": "signalkgen"
+      }
+    }
+  },
+  {
+    "version": "1.0.0",
+    "self": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+    "vessels": {
+      "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a": {
+        "name": "Boat 1",
+        "uuid": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+        "mmsi": "200098438",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 38.014621122426284,
+              "longitude": -122.38784888377563,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 353.058813046794,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 353.058813046794,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954": {
+        "name": "Boat 2",
+        "uuid": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+        "mmsi": "204182846",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.96273635300511,
+              "longitude": -122.24910116070893,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 151.4615147886923,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 151.4615147886923,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e": {
+        "name": "Boat 3",
+        "uuid": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+        "mmsi": "204107008",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.92350732502474,
+              "longitude": -122.9202260634301,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 160.4843028147173,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 160.4843028147173,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          }
+        }
+      }
+    },
+    "sources": {
+      "self": {
+        "type": "internal",
+        "src": "signalkgen"
+      }
+    }
+  },
+  {
+    "version": "1.0.0",
+    "self": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+    "vessels": {
+      "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a": {
+        "name": "Boat 1",
+        "uuid": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+        "mmsi": "200098438",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 38.014621122426284,
+              "longitude": -122.38784888377563,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 353.058813046794,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 353.058813046794,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954": {
+        "name": "Boat 2",
+        "uuid": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+        "mmsi": "204182846",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.96273635300511,
+              "longitude": -122.24910116070893,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 151.4615147886923,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 151.4615147886923,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e": {
+        "name": "Boat 3",
+        "uuid": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+        "mmsi": "204107008",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.92350732502474,
+              "longitude": -122.9202260634301,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 160.4843028147173,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 160.4843028147173,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          }
+        }
+      }
+    },
+    "sources": {
+      "self": {
+        "type": "internal",
+        "src": "signalkgen"
+      }
+    }
+  },
+  {
+    "version": "1.0.0",
+    "self": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+    "vessels": {
+      "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a": {
+        "name": "Boat 1",
+        "uuid": "urn:mrn:signalk:uuid:182010c5-20f6-4c8a-9f32-fd18af029d3a",
+        "mmsi": "200098438",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 38.014621122426284,
+              "longitude": -122.38784888377563,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 353.058813046794,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 353.058813046794,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:42:08.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954": {
+        "name": "Boat 2",
+        "uuid": "urn:mrn:signalk:uuid:98b1b202-ee0f-4f40-89e4-1f1a8e179954",
+        "mmsi": "204182846",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.96273635300511,
+              "longitude": -122.24910116070893,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 151.4615147886923,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 151.4615147886923,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:45:08.592502Z"
+          }
+        }
+      },
+      "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e": {
+        "name": "Boat 3",
+        "uuid": "urn:mrn:signalk:uuid:88a7ce9c-38ac-4bbe-aec2-536cfe2f282e",
+        "mmsi": "204107008",
+        "navigation": {
+          "position": {
+            "value": {
+              "latitude": 37.92350732502474,
+              "longitude": -122.9202260634301,
+              "altitude": 0.0
+            },
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "courseOverGroundTrue": {
+            "value": 160.4843028147173,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "speedOverGround": {
+            "value": 10,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          },
+          "headingMagnetic": {
+            "value": 160.4843028147173,
+            "$source": "self",
+            "timestamp": "2025-04-16T07:49:26.592502Z"
+          }
+        }
+      }
+    },
+    "sources": {
+      "self": {
+        "type": "internal",
+        "src": "signalkgen"
+      }
+    }
+  }
+]
