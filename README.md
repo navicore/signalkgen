@@ -1,3 +1,8 @@
+<!-- ghmig:moved -->
+> **This repository has moved to [https://git.navicore.tech/navicore/signalkgen](https://git.navicore.tech/navicore/signalkgen).**
+>
+> The GitHub copy is archived and no longer maintained.
+
 Generate Test Data for Navactor
 ==============
 
@@ -64,4 +69,3 @@ Example Commands
 ```
 signalkgen --num-boats 30 --nautical-miles 5 --iterations 2 | jq '.. | .timestamp? // empty'  
 ```
-
